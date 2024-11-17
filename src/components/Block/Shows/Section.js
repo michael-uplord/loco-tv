@@ -68,6 +68,20 @@ export default function BlockShowsSection({ show }) {
               </div>
             )}
 
+            <div className={styles.showStatus}>
+              <span
+                className={`${
+                  show.status === "Ended"
+                    ? styles.statusError
+                    : show.status === "To Be Determined" || show.status === "In Development"
+                    ? styles.statusInfo
+                    : ""
+                }`}
+              >
+                {show.status}
+              </span>
+            </div>
+
             <div dangerouslySetInnerHTML={markup} className={styles.episodeSumary} />
           </div>
 
