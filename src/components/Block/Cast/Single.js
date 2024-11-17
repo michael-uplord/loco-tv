@@ -37,6 +37,7 @@ export default function BlockCastSingle({ data }) {
       </div>
       <div className={styles.peopleText}>
         <h3>{person.name}</h3>
+        <h4>{character.name}</h4>
       </div>
     </div>
   );

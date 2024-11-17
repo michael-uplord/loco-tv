@@ -15,17 +15,9 @@
   --secondary-color-hover: #888;
   --secondary-color-text: #121110;
 
-  --background-color: #fff;
-  --heading-color: #121110;
-  --text-color: #312e2c;
-  --border-color: #ddd;
-  --border-color-hover: #b0b0b0;
-
-  @media (prefers-color-scheme: dark) {
-    --background-color: #0d0d0d;
-    --heading-color: #fff;
-    --text-color: #bdc1c6;
-    --border-color: #2b2b2b;
-    --border-color-hover: #555;
-  }
+  --background-color: #0d0d0d;
+  --heading-color: #fff;
+  --text-color: #bdc1c6;
+  --border-color: #2b2b2b;
+  --border-color-hover: #555;
 }
