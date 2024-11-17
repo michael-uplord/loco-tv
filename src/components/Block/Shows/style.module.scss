@@ -32,6 +32,12 @@
   }
 }
 
+.showDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .shows {
   display: grid;
   gap: 1.5rem;

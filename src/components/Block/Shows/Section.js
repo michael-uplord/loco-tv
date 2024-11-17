@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
-
 import styles from './style.module.scss';
-
 import BlockShowsImage from '@/components/Block/Shows/Image';
 import BlockEpisodes from '@/components/Block/Episodes';
 import Buttons from "@/components/Button/Buttons";
-
+import Svg from '@/components/Svg';
 import { fetchShowData } from '@/utils/fetchShowData';
 
 export default function BlockShowsSection({ show }) {
@@ -14,6 +12,8 @@ export default function BlockShowsSection({ show }) {
   const [episodes, setEpisodes] = useState([]);
   const [cast, setCast] = useState([]);
   const [currentTab, setCurrentTab] = useState("episodes");
+
+  const markup = { __html: show.summary };
 
   const tabButtons = [
     {
@@ -49,14 +49,26 @@ export default function BlockShowsSection({ show }) {
     };
   
     fetchData();
-  }, [show.id]);
+  }, [show.id, show._embedded]);
 
   return (
     <>
       <BlockShowsImage data={show} images={images} />
       <div className={styles.showSection}>
         <div className={`container ${styles.container}`}>
-          <h1>{show.name}</h1>
+
+          <div className={styles.showDetails}>
+            <h1>{show.name}</h1>
+
+            {show.rating?.average && (
+              <div className={styles.showRating}>
+                <Svg name="star-solid" width={20} height={20} />
+                {show.rating.average}
+              </div>
+            )}
+
+            <div dangerouslySetInnerHTML={markup} className={styles.episodeSumary} />
+          </div>
 
           <Buttons data={tabButtons} tabs={true} />
 

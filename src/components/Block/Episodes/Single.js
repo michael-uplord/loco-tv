@@ -1,5 +1,4 @@
 import Image from 'next/image';
-
 import Svg from '@/components/Svg';
 import styles from './style.module.scss';
 

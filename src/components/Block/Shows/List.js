@@ -1,9 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import styles from "./style.module.scss";
-
 import BlockShows from "@/components/Block/Shows";
 import Spinner from "@/components/Spinner";
-
 import { fetchShowsData } from "@/utils/fetchShowsData";
 
 export default function ShowsList({ query }) {
