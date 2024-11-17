@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
+
+import ShowsList from '@/components/Block/Shows/List';
+
+import BlockBanner from '@/components/Block/Banner';
 
 export const metadata = {
   title: "TVloco - Show Search",
@@ -7,6 +11,11 @@ export const metadata = {
 };
 
 export default function Home() {
+  const [query, setQuery] = useState('');
+
+  const handleQueryChange = (searchQuery) => {
+    setQuery(searchQuery);
+  };
 
   return (
     <>
@@ -15,7 +24,14 @@ export default function Home() {
         <meta name="description" content={metadata.description} />
         <link rel="icon" href="/favicon.png" type="image/png" />
       </Head>
-      <h1>Homepage</h1>
+      <BlockBanner
+        title={"Find your TV series"}
+        subtitle={"Enter a series below"}
+        onQueryChange={handleQueryChange}
+        showSearch={true}
+      />
+
+      <ShowsList query={query} />
     </>
   )
 }

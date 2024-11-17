@@ -9,8 +9,8 @@ export async function fetchShowData(id, deep = false) {
       url += `&embed[]=cast&embed[]=seasons&embed[]=episodes`;
     }
 
-    const res = await fetch(url);
-    const show = await res.json();
+    const response = await fetch(url);
+    const show = await response.json();
     return { show };
   } catch (error) {
     return { error: error.message || 'An unexpected error occurred' };
