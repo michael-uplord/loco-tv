@@ -20,14 +20,8 @@ select {
   padding: 0.75rem 1rem;
   border: 1px solid var(--border-color);
   border-radius: 0.25rem;
-  max-width: 320px;
-}
 
-.showSeaction {
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  @media (min-width: 768px) {
+    max-width: 320px;
   }
 }

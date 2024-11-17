@@ -1,3 +1,29 @@
+.showSection {
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  h1 {
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      font-size: 2rem;
+      text-align: left;
+    }
+  
+    @media (min-width: 1024px) {
+      font-size: 3rem;
+      text-align: left;
+    }
+  }
+}
+
 .showBanner {
   
   img {
