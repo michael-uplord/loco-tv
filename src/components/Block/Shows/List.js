@@ -62,7 +62,7 @@ export default function ShowsList({ query }) {
           <BlockShows shows={shows} />
         ) : (
           query && (
-            <p className="text-center">
+            <p data-cy="noResults" className="textCenter">
               {error || "No shows were found"}
             </p>
           )

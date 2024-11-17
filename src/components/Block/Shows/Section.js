@@ -59,7 +59,7 @@ export default function BlockShowsSection({ show }) {
         <div className={`container ${styles.container}`}>
 
           <div className={styles.showDetails}>
-            <h1>{show.name}</h1>
+            <h1 data-cy="title">{show.name}</h1>
 
             {show.rating?.average && (
               <div className={styles.showRating}>

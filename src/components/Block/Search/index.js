@@ -19,7 +19,7 @@ export default function BlockSearch({ onQueryChange, className }) {
 
   return (
     <div className={`${styles.searchBar} ${className}`}>
-      <input type="search" placeholder="Search..." onChange={handleInputChange} />
+      <input type="search" data-cy="search" placeholder="Search..." onChange={handleInputChange} />
       <Svg name="magnifying-glass-solid" width={20} height={20} />
     </div>
   );

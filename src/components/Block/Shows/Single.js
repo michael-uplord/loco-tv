@@ -4,7 +4,7 @@ import Svg from '@/components/Svg';
 
 export default function BlockShowsSingle({ data }) {
   return (
-    <a href={`/show/${data.id}`} className={`show ${styles.show}`}>
+    <a href={`/show/${data.id}`} data-cy="show" className={styles.show}>
       <div className={styles.showImage}>
         {data.image?.original ? (
           <Image
