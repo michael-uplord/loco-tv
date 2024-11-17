@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Buttons from "@/components/Button/Buttons";
 import Svg from "@/components/Svg";
 import styles from "@/styles/404.module.scss";
@@ -16,11 +17,11 @@ export default function NotFound() {
     <div className={styles.errorPage}>
       <div className={`container`}>
         <div className={styles.content}>
-          <a href="/" className={styles.logo}>
+          <Link href="/" className={styles.logo}>
             <Svg name="logo" width={80} height={20} />
-          </a>
+          </Link>
           <h1>Page not found</h1>
-          <p>We couldn't find the page you are looking for.</p>
+          <p>We couldn&apos;t find the page you are looking for.</p>
           <Buttons data={buttons} className={styles.buttons} />
         </div>
       </div>
