@@ -55,7 +55,7 @@ export default function ShowsList({ query }) {
 
   return (
     <div className={styles.homeSection}>
-      <div className={styles.container}>
+      <div className={`container ${styles.container}`}>
         {loading ? (
           <Spinner />
         ) : shows.length ? (

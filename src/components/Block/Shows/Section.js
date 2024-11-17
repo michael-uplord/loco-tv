@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import styles from './style.module.scss';
 import BlockShowsImage from '@/components/Block/Shows/Image';
 import BlockEpisodes from '@/components/Block/Episodes';
+import BlockCast from '@/components/Block/Cast';
 import Buttons from "@/components/Button/Buttons";
 import Svg from '@/components/Svg';
 import { fetchShowData } from '@/utils/fetchShowData';
@@ -75,7 +76,7 @@ export default function BlockShowsSection({ show }) {
           { currentTab === "episodes" ? (
             <BlockEpisodes seasons={seasons} episodes={episodes} />
           ) : currentTab === "cast" && (
-            <h2>Cast</h2>
+            <BlockCast cast={cast} />
           )}
         </div>
       </div>
