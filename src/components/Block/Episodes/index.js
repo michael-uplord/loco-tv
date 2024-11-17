@@ -53,7 +53,7 @@ export default function BlockEpisodes({ seasons, episodes }) {
         <Buttons data={seasonButtons} scroll="true" />
       )}
 
-      <h3 className="">Season {currentSeason}</h3>
+      <h3>Season {currentSeason}</h3>
       {loading ? (
         <Spinner />
       ) : filteredEpisodes.length ? (
@@ -63,7 +63,7 @@ export default function BlockEpisodes({ seasons, episodes }) {
           ))}
         </div>
       ) : (
-        <p>No epsiodes to show</p>
+        <p>No episodes to show</p>
       )}
     </div>
   )
