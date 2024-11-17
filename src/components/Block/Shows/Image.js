@@ -1,5 +1,6 @@
 import styles from './style.module.scss';
 import Image from 'next/image';
+import Button from "@/components/Button";
 
 export default function BlockShowsImage({ data: show, images }) {
   const backgroundImages = images.filter(image => image.type === "background");
@@ -9,7 +10,7 @@ export default function BlockShowsImage({ data: show, images }) {
     <>
       {lastBackgroundImage?.resolutions?.original?.url && (
         <div className={styles.showBanner}>
-          <div className="container">
+          <div className={`container ${styles.container}`}>
             <Image
               src={lastBackgroundImage.resolutions.original.url}
               alt={show.name}
@@ -19,6 +20,15 @@ export default function BlockShowsImage({ data: show, images }) {
               sizes="(min-width: 768px) 1432px, 767px"
               priority
             />
+            <div className={styles.buttons}>
+              <Button
+                data={{
+                  title: "Go back",
+                  link: "/",
+                  class: 'primary'
+                }}
+              />
+            </div>
           </div>
         </div>
       )}

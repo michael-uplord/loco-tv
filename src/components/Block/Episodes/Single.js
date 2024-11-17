@@ -23,7 +23,7 @@ export default function BlockEpisodesSingle({ data }) {
         )}
       </div>
       <div className={styles.episodeText}>
-        <h3>{data.name}</h3>
+        <h3>{data.number} - {data.name}</h3>
         {data.rating?.average && (
           <div className={styles.episodeRating}>
             <Svg name="star-solid" width={20} height={20} />

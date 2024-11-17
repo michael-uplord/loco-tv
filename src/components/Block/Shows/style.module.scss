@@ -25,6 +25,16 @@
 }
 
 .showBanner {
+
+  .container {
+    position: relative;
+  }
+
+  .buttons {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
   
   img {
     max-width: calc(100% + 2rem);
