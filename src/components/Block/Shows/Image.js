@@ -23,9 +23,9 @@ export default function BlockShowsImage({ data: show, images }) {
             <div className={styles.buttons}>
               <Button
                 data={{
-                  title: "Go back",
+                  icon: "angle-left-solid",
                   link: "/",
-                  class: 'primary'
+                  class: 'primary icon'
                 }}
               />
             </div>
