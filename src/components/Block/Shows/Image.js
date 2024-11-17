@@ -8,7 +8,7 @@ export default function BlockShowsImage({ data: show, images }) {
 
   return (
     <>
-      {lastBackgroundImage?.resolutions?.original?.url && (
+      {lastBackgroundImage?.resolutions?.original?.url ? (
         <div className={styles.showBanner}>
           <div className={`container ${styles.container}`}>
             <Image
@@ -30,6 +30,16 @@ export default function BlockShowsImage({ data: show, images }) {
               />
             </div>
           </div>
+        </div>
+      ) : (
+        <div className={styles.buttons}>
+          <Button
+            data={{
+              icon: "angle-left-solid",
+              link: "/",
+              class: 'primary icon'
+            }}
+          />
         </div>
       )}
     </>

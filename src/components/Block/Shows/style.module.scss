@@ -32,14 +32,19 @@
 
   .buttons {
     position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
+    top: 1rem;
+    left: 1rem;
+    margin: 0;
   }
   
   img {
     max-width: calc(100% + 2rem);
     margin: 0 -1rem;
   }
+}
+
+.buttons {
+  margin: 1rem 1rem 0;
 }
 
 .showDetails {
