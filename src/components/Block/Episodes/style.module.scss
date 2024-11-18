@@ -12,11 +12,19 @@
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.25rem;
+
+    @media (min-width: 768px) {
+      font-size: 2rem;
+    }
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.125rem;
+
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+    }
   }
 }
 
@@ -86,8 +94,12 @@
 
   h3 {
     color: var(--heading-color);
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: bold;
+
+    @media (min-width: 768px) {
+      font-size: 1.25rem;
+    }
   }  
 }
 
