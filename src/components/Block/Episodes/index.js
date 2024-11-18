@@ -16,8 +16,6 @@ export default function BlockEpisodes({ seasons, episodes }) {
     }
   }, [seasons, currentSeason]);
 
-  const filteredEpisodes = episodes.filter((episode) => episode.season === currentSeason);
-
   const handleSeasonChange = (seasonNumber) => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -34,8 +32,13 @@ export default function BlockEpisodes({ seasons, episodes }) {
   const seasonButtons = seasons.map((season) => ({
     title: `Season ${season.number}`,
     class: `${currentSeason === season.number ? 'primary' : 'secondary'}`,
-    onClick: () => handleSeasonChange(season.number), // Use the reusable function
+    onClick: () => handleSeasonChange(season.number),
   }));
+
+  const filteredEpisodes =
+    currentSeason !== null
+      ? episodes.filter((episode) => episode.season === currentSeason)
+      : [];
 
   return (
     <div className={styles.episodesSection}>
