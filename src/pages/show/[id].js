@@ -1,7 +1,5 @@
 import Head from 'next/head';
-
 import BlockShowsSection from '@/components/Block/Shows/Section';
-
 import { removeHTMLTags } from '@/utils/utils';
 import { fetchShowData } from '@/utils/fetchShowData';
 

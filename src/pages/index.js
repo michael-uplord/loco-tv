@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-
+import ShowsRandom from '@/components/Block/Shows/Random';
 import ShowsList from '@/components/Block/Shows/List';
-
 import BlockBanner from '@/components/Block/Banner';
 
 export const metadata = {
@@ -32,6 +31,8 @@ export default function Home() {
       />
 
       <ShowsList query={query} />
+
+      <ShowsRandom />
     </>
   )
 }

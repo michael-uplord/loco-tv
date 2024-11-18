@@ -32,14 +32,16 @@ export default function BlockShowsImage({ data: show, images }) {
           </div>
         </div>
       ) : (
-        <div className={styles.buttons}>
-          <Button
-            data={{
-              icon: "angle-left-solid",
-              link: "/",
-              class: 'primary icon'
-            }}
-          />
+        <div className={`container ${styles.container}`}>
+          <div className={styles.buttons}>
+            <Button
+              data={{
+                icon: "angle-left-solid",
+                link: "/",
+                class: 'primary icon'
+              }}
+            />
+          </div>
         </div>
       )}
     </>
