@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import BlockEpisodesSingle from '@/components/Block/Episodes/Single';
 import Buttons from '@/components/Button/Buttons';
 import Spinner from '@/components/Spinner';
@@ -6,9 +6,15 @@ import styles from './style.module.scss';
 
 export default function BlockEpisodes({ seasons, episodes }) {
   const [loading, setLoading] = useState(false);
-  const [currentSeason, setCurrentSeason] = useState(1);
+  const [currentSeason, setCurrentSeason] = useState(null);
 
   const timeoutRef = useRef(null);
+
+  useEffect(() => {
+    if (seasons[0]?.number && currentSeason === null) {
+      setCurrentSeason(seasons[0].number);
+    }
+  }, [seasons, currentSeason]);
 
   const filteredEpisodes = episodes.filter((episode) => episode.season === currentSeason);
 
@@ -39,7 +45,7 @@ export default function BlockEpisodes({ seasons, episodes }) {
         <div className="seasonSelector">
           <select
             id="seasonSelect"
-            value={currentSeason}
+            value={currentSeason ?? ''}
             onChange={(e) => handleSeasonChange(Number(e.target.value))} 
           >
             {seasons.map((season) => (
