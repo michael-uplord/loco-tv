@@ -20,12 +20,17 @@ export default function BlockShowsSingle({ data }) {
       </div>
       <div className={styles.showText}>
         <h3>{data.name}</h3>
-        <div className={styles.showLanguage}>Language - English</div>
         {data.rating?.average && (
           <div className={styles.showRating}>
             <Svg name="star-solid" width={20} height={20} />
             {data.rating.average}
           </div>
+        )}
+        <div className={styles.showLanguage}>Language - {data.language}</div>
+        {data.network?.name ? (
+          <div className={styles.showNetwork}>Network - {data.network.name}</div>
+        ): data.webChannel?.name && (
+          <div className={styles.showNetwork}>Streaming - {data.webChannel.name}</div>
         )}
         <div className={styles.showStatus}>
           <span

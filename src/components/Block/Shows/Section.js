@@ -68,6 +68,14 @@ export default function BlockShowsSection({ show }) {
               </div>
             )}
 
+            <div className={styles.showLanguage}>Language - {show.language}</div>
+
+            {show.network?.name ? (
+              <div className={styles.showNetwork}>Network - {show.network.name}</div>
+            ): show.webChannel?.name && (
+              <div className={styles.showNetwork}>Streaming - {show.webChannel.name}</div>
+            )}
+
             <div className={styles.showStatus}>
               <span
                 className={`${
